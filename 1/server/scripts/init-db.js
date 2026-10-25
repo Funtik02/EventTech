@@ -12,7 +12,7 @@ try {
     await pool.query(sql)
     console.log(`✓ ${file}`)
   }
-  console.log(withSeed ? 'База готова. Демо-вход: anna@eventtech.ru / demo123' : 'Схема создана.')
+  console.log(withSeed ? 'База готова. Демо-вход: ndanilov40@gmail.com / demo123' : 'Схема создана.')
 } catch (error) {
   console.error('Ошибка инициализации базы:', error.message)
   process.exitCode = 1

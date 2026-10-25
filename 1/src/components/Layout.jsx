@@ -17,6 +17,7 @@ import { useEffect, useState } from 'react'
 import { Link, NavLink, Outlet, useLocation } from 'react-router'
 import { useAuth } from '../context/AuthContext.jsx'
 import { useEvents } from '../context/EventContext.jsx'
+import { Footer } from './Footer.jsx'
 import { Logo } from './Logo.jsx'
 import { Avatar } from './ui.jsx'
 
@@ -122,6 +123,7 @@ export function Layout() {
         <main className="content">
           <Outlet />
         </main>
+        <Footer className="footer--app" />
       </div>
 
       <nav className="bottom-nav" aria-label="Навигация">

@@ -2,6 +2,7 @@ import { Calendar, CircleCheck, MapPin, Users } from 'lucide-react'
 import { useState } from 'react'
 import { useParams } from 'react-router'
 import { EventCover } from '../components/EventCover.jsx'
+import { Footer } from '../components/Footer.jsx'
 import { Logo } from '../components/Logo.jsx'
 import { ErrorState, Field, FormError, Spinner } from '../components/ui.jsx'
 import { api, useApi } from '../lib/api.js'
@@ -101,6 +102,7 @@ export function PublicRegister() {
           </div>
         )}
       </main>
+      <Footer />
     </div>
   )
 }
