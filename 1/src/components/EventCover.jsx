@@ -1,4 +1,3 @@
-/** Иллюстрация «сцена и зал» вместо фото обложки мероприятия. */
 export function EventCover({ title }) {
   const crowd = Array.from({ length: 34 }, (_, i) => ({
     x: 6 + (i % 17) * 18 + (i >= 17 ? 9 : 0),

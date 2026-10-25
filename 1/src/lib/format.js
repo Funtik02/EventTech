@@ -42,7 +42,6 @@ const MONTHS_SHORT = ['янв', 'фев', 'мар', 'апр', 'мая', 'июн'
 export const MONTHS = ['Январь', 'Февраль', 'Март', 'Апрель', 'Май', 'Июнь', 'Июль', 'Август', 'Сентябрь', 'Октябрь', 'Ноябрь', 'Декабрь']
 export const WEEKDAYS = ['Пн', 'Вт', 'Ср', 'Чт', 'Пт', 'Сб', 'Вс']
 
-/** 'YYYY-MM-DD' → локальная дата (без сдвига часового пояса). */
 export function parseDate(value) {
   const [y, m, d] = value.slice(0, 10).split('-').map(Number)
   return new Date(y, m - 1, d)
@@ -71,7 +70,6 @@ export function formatDateShort(value) {
   return `${date.getDate()} ${MONTHS_SHORT[date.getMonth()]}`
 }
 
-/** «12–13 мая 2025», «30 апреля – 2 мая 2025» */
 export function formatDateRange(start, end) {
   if (!start) return '—'
   if (!end || end === start) return formatDate(start)
@@ -107,7 +105,6 @@ export function percent(part, total) {
   return Math.min(100, Math.round((part / total) * 100))
 }
 
-/** Склонение: plural(5, ['задача', 'задачи', 'задач']) */
 export function plural(n, forms) {
   const mod10 = n % 10
   const mod100 = n % 100
@@ -116,7 +113,6 @@ export function plural(n, forms) {
   return forms[2]
 }
 
-/** Сколько дней до даты (отрицательное — дата прошла). */
 export function daysUntil(value) {
   const ms = parseDate(value) - parseDate(todayISO())
   return Math.round(ms / 86_400_000)
@@ -139,7 +135,6 @@ export function registrationUrl(eventId) {
   return `${window.location.origin}/r/${eventId}`
 }
 
-/** Даты сетки месяца (с понедельника), включая хвосты соседних месяцев. */
 export function monthGrid(year, month) {
   const first = new Date(year, month, 1)
   const offset = (first.getDay() + 6) % 7

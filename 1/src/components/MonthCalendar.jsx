@@ -21,10 +21,6 @@ export function MonthNav({ year, month, onChange }) {
   )
 }
 
-/**
- * Компактный календарь для главной.
- * marks: { 'YYYY-MM-DD': 'task' | 'overdue' }, range: [start, end] — дни мероприятия.
- */
 export function MiniCalendar({ year, month, onChange, marks = {}, range }) {
   const today = todayISO()
   return (

@@ -3,7 +3,6 @@ import { Link } from 'react-router'
 import { useEvents } from '../context/EventContext.jsx'
 import { EmptyState, ErrorState, Spinner } from './ui.jsx'
 
-/** Рендерит children(event) для текущего мероприятия, или заглушку, если мероприятий нет. */
 export function RequireEvent({ children }) {
   const { current, loading, error, reload } = useEvents()
 
@@ -23,6 +22,5 @@ export function RequireEvent({ children }) {
       />
     )
   }
-  // key сбрасывает состояние страницы при переключении мероприятия
   return <div key={current.id}>{children(current)}</div>
 }

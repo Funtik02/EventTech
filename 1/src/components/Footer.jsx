@@ -7,14 +7,14 @@ const TEAM = {
   phone: '+7 (962) 735-47-77',
   phoneHref: 'tel:+79627354777',
   email: 'ndanilov40@gmail.com',
-  address: 'Якутск, 3 км, Сергеляхское ш., дом 3', // заглушка
+  address: 'Якутск, 3 км, Сергеляхское ш., дом 3',
   year: 2026,
 }
 
 const NAV = [
   { label: 'Главная', to: '/' },
   { label: 'О нас', href: '#footer-about' },
-  { label: 'Услуги', href: '#' }, // заглушка — страницы пока нет
+  { label: 'Услуги', href: '#' },
   { label: 'Контакты', href: '#footer-contacts' },
 ]
 
@@ -42,7 +42,6 @@ function GithubIcon() {
   )
 }
 
-// Ссылки на соцсети — заглушки, подставьте адреса команды
 const SOCIALS = [
   { label: 'Telegram', href: 'https://t.me/ndanilov08', icon: TelegramIcon },
   { label: 'ВКонтакте', href: 'https://vk.ru/ndanilov40', icon: VkIcon },
@@ -56,7 +55,6 @@ function SubscribeForm() {
 
   const submit = (event) => {
     event.preventDefault()
-    // Заглушка: подписка пока нигде не сохраняется
     setDone(true)
   }
 

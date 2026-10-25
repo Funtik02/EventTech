@@ -48,7 +48,6 @@ export async function api(path, { method = 'GET', body } = {}) {
   return data
 }
 
-/** Загружает данные по пути API. path = null — ничего не загружать. */
 export function useApi(path) {
   const [state, setState] = useState({ data: null, error: null, loading: Boolean(path) })
 

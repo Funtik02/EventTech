@@ -83,7 +83,6 @@ function exportCsv(event, guests) {
     ['Имя', 'Email', 'Телефон', 'Компания', 'Статус', 'Источник', 'Дата регистрации'],
     ...guests.map((g) => [g.name, g.email, g.phone, g.company, GUEST_STATUSES[g.status], g.source === 'form' ? 'Форма' : 'Вручную', g.created_at]),
   ]
-  // BOM — чтобы Excel корректно открыл кириллицу
   const csv = '﻿' + rows.map((row) => row.map(escape).join(';')).join('\r\n')
   const url = URL.createObjectURL(new Blob([csv], { type: 'text/csv;charset=utf-8' }))
   const link = document.createElement('a')

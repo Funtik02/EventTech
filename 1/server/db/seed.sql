@@ -1,8 +1,3 @@
--- EventTech: демо-данные. Выполнять сразу после schema.sql.
--- Главное мероприятие — хакатон «ИТ Арктика» (22–26 октября 2026, Якутск, АГАТУ).
--- Даты второго мероприятия считаются от текущего дня.
--- Вход для демо: ndanilov40@gmail.com / demo123
-
 INSERT INTO users (id, name, email, password_hash, position) VALUES
   (1, 'Ньургун Данилов', 'ndanilov40@gmail.com', '$2b$10$O92NHSPUNm/I.9QilN/uwOtd9l78U41VTh9cGnBiMuHofvx/iKlyy', 'Организатор');
 SELECT setval('users_id_seq', (SELECT max(id) FROM users));
@@ -27,7 +22,6 @@ INSERT INTO team_members (id, event_id, user_id, name, email, role) VALUES
   (6, 2, 1,    'Ньургун Данилов', 'ndanilov40@gmail.com', 'Руководитель проекта');
 SELECT setval('team_members_id_seq', (SELECT max(id) FROM team_members));
 
--- 11 открытых задач (на 25 октября 2 просрочены)
 INSERT INTO tasks (event_id, assignee_id, title, due_date, priority, status) VALUES
   (1, 3, 'Обновить расписание чекпоинтов в чате участников', '2026-10-23', 'medium', 'todo'),
   (1, 5, 'Собрать согласия на обработку персональных данных', '2026-10-24', 'high',   'todo'),
@@ -41,7 +35,6 @@ INSERT INTO tasks (event_id, assignee_id, title, due_date, priority, status) VAL
   (1, 5, 'Разослать анкету обратной связи участникам',       '2026-10-29', 'medium', 'todo'),
   (1, 1, 'Подготовить отчёт для партнёров',                  '2026-11-05', 'medium', 'todo');
 
--- 24 выполненные задачи
 INSERT INTO tasks (event_id, assignee_id, title, due_date, priority, status) VALUES
   (1, 1, 'Определить концепцию и треки хакатона',            '2026-08-20', 'high',   'done'),
   (1, 2, 'Согласовать площадку с АГАТУ',                     '2026-08-25', 'high',   'done'),
@@ -68,12 +61,10 @@ INSERT INTO tasks (event_id, assignee_id, title, due_date, priority, status) VAL
   (1, 3, 'Провести мастер-класс по питчингу',                '2026-10-24', 'low',    'done'),
   (1, 3, 'Провести второй чекпоинт с менторами',             '2026-10-24', 'medium', 'done');
 
--- Задачи хакатона «AI для HR»
 INSERT INTO tasks (event_id, assignee_id, title, due_date, priority, status) VALUES
   (2, 6, 'Сформулировать кейсы для команд',        CURRENT_DATE + 10, 'high',   'todo'),
   (2, 6, 'Собрать жюри',                           CURRENT_DATE + 20, 'medium', 'todo');
 
--- Бюджет: план 480 000 ₽, факт 297 000 ₽ из лимита 500 000 ₽ (призы выдаются в последний день)
 INSERT INTO budget_items (event_id, category, title, vendor, planned, actual) VALUES
   (1, 'Площадка',       'Аренда аудиторий и коворкинга',  'АГАТУ',           60000,  60000),
   (1, 'Призовой фонд',  'Призы командам-победителям',     '',               150000,      0),
@@ -84,7 +75,6 @@ INSERT INTO budget_items (event_id, category, title, vendor, planned, actual) VA
   (1, 'Маркетинг',      'Реклама в соцсетях',             '',                20000,  18000),
   (2, 'Кейтеринг',      'Питание участников',             '',                60000,      0);
 
--- Участники: 13 пришли, 2 зарегистрировались, но не пришли, 2 отменили
 INSERT INTO guests (event_id, name, email, phone, company, status, source, created_at) VALUES
   (1, 'Айсен Николаев',        'aysen.nikolaev@mail.ru',    '+7 914 223-41-87', 'СВФУ',               'checked_in', 'form',   '2026-09-16 14:22+09'),
   (1, 'Сардаана Иванова',      'sardaana.iv@gmail.com',     '+7 924 661-30-52', 'АГАТУ',              'checked_in', 'form',   '2026-09-17 10:05+09'),

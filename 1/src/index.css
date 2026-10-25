@@ -1,4 +1,3 @@
-/* ===== Дизайн-токены EventTech (из макета) ===== */
 :root {
   --primary: #6366f1;
   --primary-hover: #4f46e5;
@@ -144,7 +143,6 @@ button {
   color: var(--primary-hover);
 }
 
-/* ===== Кнопки ===== */
 .btn {
   display: inline-flex;
   align-items: center;
@@ -237,7 +235,6 @@ button {
   color: var(--text);
 }
 
-/* ===== Поля ===== */
 .input {
   width: 100%;
   height: 42px;
@@ -375,7 +372,6 @@ textarea.input {
   padding-left: 36px;
 }
 
-/* ===== Карточки ===== */
 .card {
   background: var(--surface);
   border: 1px solid var(--border);
@@ -398,7 +394,6 @@ textarea.input {
   gap: 8px;
 }
 
-/* ===== Бейджи и теги ===== */
 .badge {
   display: inline-flex;
   align-items: center;
@@ -476,7 +471,6 @@ textarea.input {
   color: var(--text-muted);
 }
 
-/* ===== Прогресс ===== */
 .progress {
   flex: 1;
   height: 8px;
@@ -496,7 +490,6 @@ textarea.input {
   background: var(--danger);
 }
 
-/* ===== Аватар ===== */
 .avatar {
   display: inline-flex;
   align-items: center;
@@ -517,7 +510,6 @@ textarea.input {
   flex-shrink: 0;
 }
 
-/* ===== Вкладки ===== */
 .tabs {
   display: inline-flex;
   gap: 4px;
@@ -567,7 +559,6 @@ textarea.input {
   background: var(--primary-soft);
 }
 
-/* ===== Таблица ===== */
 .table-wrap {
   overflow-x: auto;
   margin: 0 -20px;
@@ -629,7 +620,6 @@ textarea.input {
   padding-top: 16px;
 }
 
-/* ===== Модалка ===== */
 .modal {
   position: fixed;
   inset: 0;
@@ -686,7 +676,6 @@ textarea.input {
   }
 }
 
-/* ===== Состояния ===== */
 .state {
   display: flex;
   flex-direction: column;

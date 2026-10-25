@@ -12,7 +12,6 @@ function readStoredId() {
   }
 }
 
-/** Список мероприятий пользователя и «текущее» мероприятие, с которым работают разделы. */
 export function EventProvider({ children }) {
   const [events, setEvents] = useState([])
   const [loading, setLoading] = useState(true)
@@ -39,7 +38,6 @@ export function EventProvider({ children }) {
     try {
       localStorage.setItem(STORAGE_KEY, String(id))
     } catch {
-      // localStorage недоступен — просто не запоминаем выбор
     }
   }, [])
 
@@ -52,7 +50,6 @@ export function EventProvider({ children }) {
   return <EventContext.Provider value={value}>{children}</EventContext.Provider>
 }
 
-// eslint-disable-next-line react/only-export-components
 export function useEvents() {
   return useContext(EventContext)
 }

@@ -25,7 +25,6 @@ app.use('/api', (_req, _res) => {
   throw new HttpError(404, 'Метод API не найден')
 })
 
-// После `npm run build` в корне сервер отдаёт и фронтенд — удобно для демо одним процессом
 const distDir = fileURLToPath(new URL('../../dist', import.meta.url))
 if (existsSync(distDir)) {
   app.use(express.static(distDir))

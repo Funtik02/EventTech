@@ -52,10 +52,6 @@ function coerce(value, rule, label) {
   }
 }
 
-/**
- * Проверяет тело запроса по схеме и возвращает только известные поля.
- * partial: true — для PATCH, отсутствующие поля пропускаются.
- */
 export function parseBody(body, schema, { partial = false } = {}) {
   const source = body ?? {}
   const result = {}
@@ -84,7 +80,6 @@ export function parseId(value) {
   return id
 }
 
-/** UPDATE по списку полей. Имена колонок берутся только из схем валидации. */
 export function buildUpdate(table, id, fields) {
   const keys = Object.keys(fields)
   if (keys.length === 0) throw new HttpError(400, 'Нет полей для обновления')

@@ -1,4 +1,3 @@
-/** Знак EventTech — изометрический «кубик» из трёх граней. */
 export function LogoMark({ size = 32 }) {
   return (
     <svg width={size} height={size} viewBox="0 0 48 48" aria-hidden="true">

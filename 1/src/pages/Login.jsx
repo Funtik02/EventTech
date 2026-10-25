@@ -5,7 +5,6 @@ import { Logo } from '../components/Logo.jsx'
 import { Field, FormError, Tabs } from '../components/ui.jsx'
 import { useAuth } from '../context/AuthContext.jsx'
 
-// Демо-аккаунт из server/db/seed.sql
 const DEMO = { email: 'ndanilov40@gmail.com', password: 'demo123' }
 
 export function Login() {

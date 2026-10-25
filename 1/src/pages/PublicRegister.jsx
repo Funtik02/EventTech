@@ -8,7 +8,6 @@ import { ErrorState, Field, FormError, Spinner } from '../components/ui.jsx'
 import { api, useApi } from '../lib/api.js'
 import { EVENT_TYPES, formatDateRange, formatTime } from '../lib/format.js'
 
-/** Публичная страница регистрации гостя: /r/:eventId */
 export function PublicRegister() {
   const { eventId } = useParams()
   const event = useApi(`/public/events/${encodeURIComponent(eventId)}`)

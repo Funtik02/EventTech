@@ -1,5 +1,3 @@
-// Создаёт таблицы и заполняет демо-данными: npm run db:init
-// Флаг --no-seed — только схема, без демо-данных.
 import { readFile } from 'node:fs/promises'
 import { pool } from '../src/db.js'
 

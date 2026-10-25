@@ -26,7 +26,6 @@ const teamMemberSchema = {
   role: { type: 'string', max: 120, label: 'Роль' },
 }
 
-// Типовой план подготовки: срок = дата начала (или окончания) + offset дней, но не раньше сегодняшнего дня
 const PLAN_TEMPLATE = [
   { title: 'Утвердить концепцию и цели мероприятия', priority: 'high', offset: -60 },
   { title: 'Согласовать бюджет', priority: 'high', offset: -55 },

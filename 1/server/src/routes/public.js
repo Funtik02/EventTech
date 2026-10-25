@@ -2,8 +2,6 @@ import { Router } from 'express'
 import { query } from '../db.js'
 import { HttpError, parseBody, parseId } from '../validate.js'
 
-// Открытые эндпоинты без авторизации — страница регистрации гостя
-
 const PUBLIC_EVENT_SQL = `
   SELECT e.id, e.title, e.type, e.status, e.start_date, e.end_date, e.start_time,
          e.location, e.description, e.expected_attendees,

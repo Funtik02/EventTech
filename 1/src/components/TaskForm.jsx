@@ -4,7 +4,6 @@ import { api } from '../lib/api.js'
 import { PRIORITIES, TASK_STATUSES } from '../lib/format.js'
 import { Field, FormError, Modal } from './ui.jsx'
 
-/** Модалка создания/редактирования задачи. task = null — новая задача. */
 export function TaskForm({ eventId, task, team, defaultDate, onClose, onSaved, onDeleted }) {
   const [form, setForm] = useState({
     title: task?.title ?? '',

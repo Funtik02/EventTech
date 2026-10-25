@@ -1,7 +1,3 @@
--- EventTech: схема базы данных PostgreSQL.
--- Можно выполнить в pgAdmin 4 (Query Tool) или командой `npm run db:init`.
--- Скрипт пересоздаёт все таблицы — существующие данные будут удалены.
-
 DROP TABLE IF EXISTS guests, budget_items, tasks, team_members, events, users CASCADE;
 
 CREATE TABLE users (
@@ -33,7 +29,6 @@ CREATE TABLE events (
   CHECK (end_date >= start_date)
 );
 
--- Команда мероприятия. user_id заполнен, если участник команды зарегистрирован в сервисе.
 CREATE TABLE team_members (
   id         SERIAL PRIMARY KEY,
   event_id   INTEGER     NOT NULL REFERENCES events(id) ON DELETE CASCADE,

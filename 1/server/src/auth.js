@@ -57,7 +57,6 @@ authRouter.post('/register', async (req, res) => {
       `INSERT INTO users (name, email, password_hash, position) VALUES ($1, $2, $3, $4) RETURNING ${USER_FIELDS}`,
       [data.name, email, hash, data.position],
     )
-    // Если человека уже добавили в команду по email — даём ему доступ к этим мероприятиям
     await client.query(
       'UPDATE team_members SET user_id = $1 WHERE user_id IS NULL AND lower(email) = $2',
       [rows[0].id, email],

@@ -3,10 +3,6 @@ import { getAccessibleEvent, getAccessibleRowEvent } from '../access.js'
 import { query } from '../db.js'
 import { buildUpdate, HttpError, parseBody, parseId } from '../validate.js'
 
-/**
- * Дочерние сущности мероприятия: задачи, команда, бюджет, гости.
- * Для каждой: GET/POST /events/:eventId/<path>, PATCH/DELETE /<path>/:id
- */
 const resources = [
   {
     path: 'tasks',
@@ -45,7 +41,6 @@ const resources = [
       role: { type: 'string', max: 120, label: 'Роль' },
     },
     async prepare(data) {
-      // Если человек с таким email уже зарегистрирован — привязываем, чтобы он видел мероприятие
       if (data.email) {
         const { rows } = await query('SELECT id FROM users WHERE lower(email) = lower($1)', [data.email])
         data.user_id = rows[0]?.id ?? null

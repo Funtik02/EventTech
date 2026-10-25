@@ -19,7 +19,6 @@ export function TaskCheckbox({ done, onToggle, title }) {
   )
 }
 
-/** Строка задачи: чекбокс, название, срок, приоритет, исполнитель. */
 export function TaskItem({ task, onToggle, onOpen, compact = false }) {
   const done = task.status === 'done'
   const overdue = isOverdue(task)

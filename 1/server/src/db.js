@@ -1,10 +1,7 @@
 import pg from 'pg'
 
-// DATE отдаём строкой 'YYYY-MM-DD', чтобы часовой пояс сервера не сдвигал дату
 pg.types.setTypeParser(pg.types.builtins.DATE, (value) => value)
-// NUMERIC (деньги) — числом, а не строкой
 pg.types.setTypeParser(pg.types.builtins.NUMERIC, (value) => Number.parseFloat(value))
-// COUNT(*) возвращает BIGINT — для наших объёмов безопасно превращать в число
 pg.types.setTypeParser(pg.types.builtins.INT8, (value) => Number.parseInt(value, 10))
 
 export const pool = new pg.Pool({ connectionString: process.env.DATABASE_URL })
