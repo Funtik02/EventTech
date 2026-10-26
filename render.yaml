@@ -3,7 +3,7 @@ services:
     name: eventtech
     runtime: node
     plan: free
-    rootDir: 1
+    rootDir: "1"
     buildCommand: npm ci && npm ci --prefix server && npm run build
     startCommand: npm start --prefix server
     healthCheckPath: /api/health
