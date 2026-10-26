@@ -1,15 +1,10 @@
-import { readFile } from 'node:fs/promises'
 import { pool } from '../src/db.js'
+import { runSqlFiles } from '../src/setup.js'
 
 const withSeed = !process.argv.includes('--no-seed')
-const files = ['schema.sql', ...(withSeed ? ['seed.sql'] : [])]
 
 try {
-  for (const file of files) {
-    const sql = await readFile(new URL(`../db/${file}`, import.meta.url), 'utf8')
-    await pool.query(sql)
-    console.log(`✓ ${file}`)
-  }
+  await runSqlFiles({ seed: withSeed })
   console.log(withSeed ? 'База готова. Демо-вход: ndanilov40@gmail.com / demo123' : 'Схема создана.')
 } catch (error) {
   console.error('Ошибка инициализации базы:', error.message)

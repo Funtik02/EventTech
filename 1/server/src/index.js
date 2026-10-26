@@ -6,6 +6,7 @@ import { pool } from './db.js'
 import { eventsRouter } from './routes/events.js'
 import { publicRouter } from './routes/public.js'
 import { resourcesRouter } from './routes/resources.js'
+import { ensureDatabase } from './setup.js'
 import { HttpError } from './validate.js'
 
 const app = express()
@@ -58,6 +59,12 @@ app.use((error, _req, res, _next) => {
   console.error(error)
   res.status(500).json({ error: 'Внутренняя ошибка сервера' })
 })
+
+try {
+  await ensureDatabase()
+} catch (error) {
+  console.error('[db] Не удалось подготовить базу:', error.message)
+}
 
 const port = Number(process.env.PORT) || 3001
 app.listen(port, () => {

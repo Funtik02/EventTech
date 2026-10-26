@@ -45,7 +45,7 @@ function GithubIcon() {
 const SOCIALS = [
   { label: 'Telegram', href: 'https://t.me/ndanilov08', icon: TelegramIcon },
   { label: 'ВКонтакте', href: 'https://vk.ru/ndanilov40', icon: VkIcon },
-  { label: 'GitHub', href: '#', icon: GithubIcon },
+  { label: 'GitHub', href: 'https://github.com/Funtik02/EventTech/tree/last', icon: GithubIcon },
 ]
 
 function SubscribeForm() {

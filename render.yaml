@@ -1,0 +1,24 @@
+services:
+  - type: web
+    name: eventtech
+    runtime: node
+    plan: free
+    rootDir: 1
+    buildCommand: npm ci && npm ci --prefix server && npm run build
+    startCommand: npm start --prefix server
+    healthCheckPath: /api/health
+    envVars:
+      - key: NODE_VERSION
+        value: "24"
+      - key: DATABASE_URL
+        fromDatabase:
+          name: eventtech-db
+          property: connectionString
+      - key: JWT_SECRET
+        generateValue: true
+
+databases:
+  - name: eventtech-db
+    plan: free
+    databaseName: eventtech
+    user: eventtech
